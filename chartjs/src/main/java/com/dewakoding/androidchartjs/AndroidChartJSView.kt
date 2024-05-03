@@ -40,7 +40,10 @@ class AndroidChartJSView  @JvmOverloads constructor(
         jsi = JavascriptInterface(getContext(), type, Gson().toJson(label) , Gson().toJson(data), labelTitle)
         render(jsi)
     }
-
+    fun setChartByGson(type: String,label: String, data: String, labelTitle: String) {
+        jsi = JavascriptInterface(getContext(), type, label, data, labelTitle)
+        render(jsi)
+    }
     fun setBubbleChart(data: Array<BubbleEntity>, labelTitle: String) {
         jsi = JavascriptInterface(context, "bubble", null, Gson().toJson(data), labelTitle)
         render(jsi)
